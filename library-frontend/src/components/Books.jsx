@@ -1,9 +1,14 @@
+import { use } from "react";
+import { ALL_AUTHORS } from "../queriesAppolo/authorQueries";
+import { useQuery } from "@apollo/client";
+import { ALL_BOOKS } from "../queriesAppolo/booksQueries";
+
 const Books = (props) => {
   if (!props.show) {
     return null
   }
 
-  const books = []
+  const books = useQuery(ALL_BOOKS).data?.allBooks || [];
 
   return (
     <div>
