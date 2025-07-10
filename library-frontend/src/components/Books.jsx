@@ -2,6 +2,7 @@ import { use } from "react";
 import { ALL_AUTHORS } from "../queriesAppolo/authorQueries";
 import { useQuery } from "@apollo/client";
 import { ALL_BOOKS } from "../queriesAppolo/booksQueries";
+import NewBook from "./NewBook";
 
 const Books = (props) => {
   if (!props.show) {
@@ -30,6 +31,8 @@ const Books = (props) => {
           ))}
         </tbody>
       </table>
+
+      <NewBook show={props.show} />
     </div>
   )
 }
